@@ -1,5 +1,13 @@
 import socket
 #Importing the socket package
+
+def scan_port(ip, port):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.settimeout(0.1)
+    resu = sock.connect_ex((ip, port))
+    sock.close()
+    return resu
+
 #This program is written to scan a hostname for open ports and ping them
 print("Hello User to BashTheBalrog's Port Scanner")
 target=input("Enter IP address or hostname: ")
@@ -14,7 +22,7 @@ sock.settimeout(1)
 print(sock)
 if choice==1:
     port=int(input("Enter port number to scan: "))
-    result=sock.connect_ex((ip,port))
+    result=scan_port(ip, port)
     print(result)
 
     if result==0:
@@ -23,9 +31,7 @@ if choice==1:
         print(f"Port {port} is CLOSED")
 elif choice==2:
     for port in range(1,65535):
-        sock=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        sock.settimeout(0.05)
-        result=sock.connect_ex((ip,port))
+        result=scan_port(ip, port)
         if result==0:
             print(f"Port {port} is OPEN")
         #else:
