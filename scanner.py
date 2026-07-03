@@ -4,3 +4,6 @@ import socket
 print("Hello User to BashTheBalrog's Port Scanner")
 target=input("Enter IP address or hostname: ")
 print(target)
+ip=socket.gethostbyname(target)
+print("IP: ")
+print(ip)
