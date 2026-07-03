@@ -1,2 +1,6 @@
 import socket
-print("Hello Port Scanner")
+#Importing the socket package
+#This program is written to scan a hostname for open ports and ping them
+print("Hello User to BashTheBalrog's Port Scanner")
+target=input("Enter IP address or hostname: ")
+print(target)
