@@ -1,4 +1,5 @@
 import socket
+import time
 #Importing the socket package
 
 def scan_port(ip, port):
@@ -9,16 +10,24 @@ def scan_port(ip, port):
     return resu
 
 #This program is written to scan a hostname for open ports and ping them
+print("="*50)
+print("          PYTHON TCP PORT SCANNER")
+print("="*50)
 print("Hello User to BashTheBalrog's Port Scanner")
 target=input("Enter IP address or hostname: ")
 print(target)
-ip=socket.gethostbyname(target)
+try:
+    ip=socket.gethostbyname(target)
+except socket.gaierror:
+    print("Hostname could not be resolved. Exiting")
+    exit()
 print("IP: ")
 print(ip)
 print("Scan one port => 1 OR Scan ALL PORTS => 2 OR Scan a range of ports => 3")
 choice=int(input("Enter your choice: "))
 sock=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 sock.settimeout(1)
+start_time=time.time()
 print(sock)
 if choice==1:
     port=int(input("Enter port number to scan: "))
@@ -52,3 +61,5 @@ elif choice==3:
     #else:
            # print(f"Port {port} is CLOSED")
 sock.close()
+end_time=time.time()
+print(f"Scan completed in {end_time - start_time} seconds")
