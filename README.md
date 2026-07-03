@@ -16,14 +16,12 @@ A simple tcp port scanner made by BashTheBalrog written in Python as a learning 
 ## How to Run (the program ofc)
 
 1. Clone the repo:
-```bash
-   git clone https://github.com/BashtheBalrog/port-scanner.git```
+```bash git clone https://github.com/BashtheBalrog/port-scanner.git```
 
 2. Open the project folder.
 
 3. Run:
-```bash
-   python scanner.py```
+```bash python scanner.py```
 
 ## Example
 ```  ```
