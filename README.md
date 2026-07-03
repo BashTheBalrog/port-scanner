@@ -27,8 +27,8 @@ A simple tcp port scanner made by BashTheBalrog written in Python as a learning 
 ```  ```
 
 ## Roadmap
-- [*] Single Port scanning
-- [*] Port Range scanning
+- [X] Single Port scanning
+- [X] Port Range scanning
 - [ ] Multithreading
 - [ ] Service Detection
 - [ ] Result saving to file
